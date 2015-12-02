@@ -1,0 +1,7 @@
+{
+  "name": "Calligraphy",
+  "private": true,
+  "dependencies": {
+    "Materialize": "materialize#~0.97.3"
+  }
+}

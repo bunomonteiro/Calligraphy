@@ -1,0 +1,260 @@
+$font-path: '../font/';
+$graphite-color: #888888;
+$graphite-light-color: #666666;
+$paper-line-color: #DFE8EC;
+$x-height-line-color: #EEF3F5;
+$indigo-color: #5c6bc0;
+$side-nav-width: 240px;
+@mixin paper-line-config($font-size, $line-height, $x-height-line-y) {
+  font-size: $font-size;
+  line-height: $line-height;
+  background: -webkit-linear-gradient($paper-line-color 0%, transparent 8%) 0 $line-height + 27;
+  background: -moz-linear-gradient($paper-line-color 0%, transparent 8%) 0 $line-height + 27;
+  background: -o-linear-gradient($paper-line-color 0%, transparent 8%) 0 $line-height + 27;
+  background: linear-gradient($paper-line-color 0%, transparent 8%) 0 $line-height + 27;
+  -ms-background-size: 100% $line-height;
+  -webkit-background-size: 100% $line-height;
+  -moz-background-size: 100% $line-height;
+  -ms-background-size: 100% $line-height;
+  background-size: 100% $line-height;
+  background-color: #FFFEF8;
+  .x-height-line {
+    background: -webkit-linear-gradient($x-height-line-color 0%, transparent 8%) 0 $x-height-line-y;
+    background: -moz-linear-gradient($x-height-line-color 0%, transparent 8%) 0 $x-height-line-y;
+    background: -o-linear-gradient($x-height-line-color 0%, transparent 8%) 0 $x-height-line-y;
+    background: linear-gradient($x-height-line-color 0%, transparent 8%) 0 $x-height-line-y;
+    -ms-background-size: 100% $line-height;
+    -webkit-background-size: 100% $line-height;
+    -moz-background-size: 100% $line-height;
+    -ms-background-size: 100% $line-height;
+    background-size: 100% $line-height;
+  }
+  .paper {
+    line-height: $line-height * 3;
+  }
+}
+@mixin opacity($value){
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value})";
+  filter: alpha(opacity=$value);
+  -moz-opacity: $value / 100;
+  -khtml-opacity: $value / 100;
+  opacity: $value / 100;
+}
+
+// bower:scss
+@import "bower_components/materialize/sass/materialize.scss";
+// endbower
+/* Space out content a bit */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('#{$font-path}roboto/Roboto-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sacramento';
+  src: url('#{$font-path}ttf/Sacramento.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mr De Haviland';
+  src: url('#{$font-path}ttf/MrDeHaviland.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Allura';
+  src: url('#{$font-path}ttf/Allura.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Haikus Script';
+  src: url('#{$font-path}ttf/HaikusScript.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Halo Handletter';
+  src: url('#{$font-path}ttf/HaloHandletter.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Jane Austen';
+  src: url('#{$font-path}ttf/JaneAusten.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'journal';
+  src: url('#{$font-path}ttf/journal.ttf') format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quiline Script Thin';
+  src: url('#{$font-path}ttf/QuilineScriptThin.ttf') format('truetype');
+  font-style: normal;
+}
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  header {
+    .brand-logo{
+      font-family: 'Quiline Script Thin', cursive;
+      padding-left: 25px;
+    }
+    .side-nav{
+      overflow-y:hidden !important;
+      overflow-x:hidden !important;
+    }
+    .side-nav__item--logo-container a{
+      padding-top: 12px;
+      img{
+        width:32px;
+        height:32px;
+      }
+    }
+    .font-families-list li.active{
+      background-color: #7986cb !important;
+    }
+  }
+
+  main {
+    height: calc(100% - 90px);
+    overflow-y:hidden !important;
+    overflow-x:hidden !important;
+    padding-top: 20px;
+
+    .copybook {
+      @include paper-line-config(24px, 35px, 14px);
+      border: 1px solid #B5B5B5;
+      color: $graphite-color;
+      margin-bottom: 20px;
+      padding: 37px 55px 27px;
+      position: relative;
+    }
+    .x-height-line {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .x-height-line::before {
+      content: "";
+      z-index: -1;
+      margin: 0;
+      width: 100%;
+      height: 10px;
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      background: #FFFEF8;
+      border: 0;
+      border-bottom: 1px solid #B5B5B5;
+    }
+    .x-height-line::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      top: 0;
+      left: 39px;
+      bottom: 0;
+      border-left: 1px solid #F8D3D3;
+    }
+    .paper {
+      z-index: 1;
+      min-height: 400px;
+      position: relative;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+    .sacramento-font {
+      font-family: 'Sacramento', cursive;
+      @include paper-line-config(40px, 35px, 16px);
+    }
+    .haviland-font {
+      font-family: 'Mr De Haviland', cursive;
+      @include paper-line-config(40px, 35px, 19px);
+    }
+    .allura-font {
+      font-family: 'Allura', cursive;
+      @include paper-line-config(40px, 35px, 13px);
+    }
+    .haikus-script-font{
+      font-family: 'Haikus Script', cursive;
+      @include paper-line-config(40px, 35px, 18px);
+    }
+    .halo-handletter-font{
+      font-family: 'Halo Handletter', cursive;
+      @include paper-line-config(40px, 35px, 16px);
+    }
+    .jane-austen-font{
+      font-family: 'Jane Austen', cursive;
+      @include paper-line-config(40px, 35px, 13px);
+    }
+    .journal-font{
+      font-family: 'Journal', cursive;
+      @include paper-line-config(40px, 40px, 15px);
+    }
+    .quiline-script-thin-font{
+      font-family: 'Quiline Script Thin', cursive;
+      @include paper-line-config(40px, 35px, 17px);
+    }
+
+    #about-modal .quiline-script-thin{
+      font-size: 20pt;
+    }
+  }
+
+  .quiline-script-thin{
+    font-family: 'Quiline Script Thin', cursive;
+  }
+  .bold > a {
+    font-weight: bold;
+  }
+  .waves-effect.waves-indigo .waves-ripple {
+    background-color: rgba(63, 81, 181, 0.65);
+  }
+  .waves-effect.waves-indigo-light .waves-ripple {
+    background-color: rgba(159, 168, 218, 0.65);
+  }
+
+  footer {
+    border-top: 1px solid #eee;
+    color: $graphite-color;
+    height: 25px;
+    padding-top: 1px;
+    a {
+      color: $graphite-light-color;
+    }
+    img.heart{
+      @include opacity(50);
+      height: 7px;
+    }
+  }
+
+  header, main, footer {
+    padding-left: $side-nav-width;
+  }
+  header .navbar-fixed nav.indigo{
+      width: calc(100% - $side-nav-width);
+  }
+
+  textarea:focus {
+    border-bottom: 1px solid $indigo-color !important;
+    -webkit-box-shadow: 0 1px 0 0 $indigo-color !important;
+    -moz-box-shadow: 0 1px 0 0 $indigo-color !important;
+    box-shadow: 0 1px 0 0 $indigo-color !important;
+  }
+  textarea.materialize-textarea:focus:not([readonly]) + label {
+      color:$indigo-color !important;
+  }
+
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+    header .navbar-fixed nav.indigo{
+        width: 100%;
+    }
+  }
+}
