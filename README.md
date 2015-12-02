@@ -75,4 +75,4 @@ The **Calligraphy** source code is issued under MIT license, a permissive free l
    [jQuery]: <http://jquery.com>
    [Gulp]: <http://gulpjs.com>
    [MaterializeCSS]: <https://github.com/Dogfalo/materialize>
-   [Calligraphy Demo]: <http://lab.buno.com.br/calli/>
+   [Calligraphy Demo]: <http://bunomonteiro.github.io/Calligraphy/>
