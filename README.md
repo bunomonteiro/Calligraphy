@@ -34,7 +34,7 @@ $ npm install -g bower
 then:
 
 ```sh
-$ git clone [git-url] calligraphy
+$ git clone https://github.com/bunomonteiro/Calligraphy.git calligraphy
 $ cd calligraphy
 $ npm install
 $ bower install
@@ -66,7 +66,6 @@ The **Calligraphy** source code is issued under MIT license, a permissive free l
 
 
    [GitHub]: <https://github.com/bunomonteiro/Calligraphy>
-   [git-url]: <https://github.com/bunomonteiro/Calligraphy.git>
    [b'uno]: <http://buno.com.br>
    [linkedin]: <http://linkedin.com/in/bunomonteiro>
    [twitter]: <http://twitter.com/bunomonteiro>
