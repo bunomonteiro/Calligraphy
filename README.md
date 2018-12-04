@@ -1,5 +1,5 @@
 # Calligraphy
-A free serverless webapp to generate a calligraphy copybook with any text and some free typefaces.
+A free webapp to generate a calligraphy copybook with any text and some free typefaces.
 See a demo: [Calligraphy Demo]
 
 ### Version
